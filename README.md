@@ -53,10 +53,6 @@ Patterns: **Strategy** (swappable losses/optimizers), **Composite** (`Sequential
 
 A network with subtly wrong gradients still trains — just worse. That is why correctness here is *proved*, not assumed: central-difference gradient checking on every layer type and on the actual MNIST architecture yields relative errors near 1e-7 (float64 noise floor for ε = 1e-5). See `REPORT.md` for the full write-up.
 
-## Companion project
-
-[`../mini-autodiff-engine`](../mini-autodiff-engine) — the same MLP, but gradients come from a hand-built computation graph (reverse-mode autodiff) instead of hand-derived formulas. The two implementations agree to 1e-16.
-
 ## Roadmap
 
 Dropout and L2 regularization, BatchNorm (a classic backward-derivation exercise), Conv2D via im2col, learning-rate schedules.
